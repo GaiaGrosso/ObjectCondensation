@@ -25,7 +25,6 @@ def create_particle_loss_dict(truth, pred):
     
     all outputs in B x V x 1/F form except
     n_active: B x 1
-    
     '''
     outdict={}
     
@@ -119,7 +118,6 @@ def sub_object_condensation_loss(d, q_min, Ntotal=n_constituents):
     #num   = p_Loss(d, 't_pos', 'p_pos') #B x V
     #print(torch.sum(torch.squeeze((d['t_mask']>0.1)*q), 1))
     #L_pos = torch.sum(torch.squeeze((d['t_mask']>0.1)*q)*num, 1)/torch.sum(torch.squeeze((d['t_mask']>0.1)*q), 1)
-    #torch.squeeze(torch.sum( (d['t_mask']>0.1)*q*num , 1) / torch.sum((d['t_mask']>0.1)*q,1)
 
     # Average 
     reploss            = torch.mean(L_rep)
